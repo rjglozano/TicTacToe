@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'Press Start 2P', cursive;
+
+
+
+}
+
+
+:root{
+    --darkblue: #252B48;
+    --gray: #445069;
+    --green: #5B9A8B;
+    --yellow: #F7E987;
+    --white: #fff;
+    --success: #198754;
+    --lightblue: #bfecf7;
+    --danger: #DC3545;
+
+}
+
+body{
+    color: var(--yellow);
+    background-color: var(--darkblue);    
+}
+
+h1{
+    text-transform: uppercase;
+    font-size: minmax(1rem, 1.5rem);
+    letter-spacing: 0.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    text-shadow: 2px 4px var(--gray);
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+#board{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    grid-template-columns: repeat(3, auto);
+    background: radial-gradient(circle, var(--gray), var(--green));
+    
+}
+
+.tiles{
+    background-color:var(--darkblue);
+    border: none;
+    font-size: 3rem;
+    text-align: center; 
+    min-width: 120px;
+    min-height: 120px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    text-shadow: 2px 4px var(--gray);
+    cursor: pointer;
+}
+
+.winnerBoard{
+    margin-bottom: 1rem;
+    background-color: var(--white);
+    padding: 1rem 2rem;
+    color: var(--darkblue);
+    border: none;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    text-shadow: 3px 3px 1px var(--lightblue);
+}
+
+.player{
+    color: var(--green);
+}
+
+
+#reset{
+    background-color: var(--white);
+    color: var(--darkblue);
+    border-radius: 10px;
+    text-transform: uppercase;
+    border: none;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+
+}
+
+#reset:hover{
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.winner {
+    background-color: var(--green); 
+    color: white;
+    text-shadow: none;
+}
+
+.winner-tile{
+    animation: zoom 1s ease infinite;
+    background-color: var(--yellow); 
+
+}
+
+.tie{
+    background-color: var(--danger);
+    color: white;
+    text-shadow: none;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1); 
+    }
+    50% {
+        transform: scale(0.9); 
+    }
+    100% {
+        transform: scale(1); 
+    }
+}
