@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     winnerBoard.classList.add('tie');
                     gameover = true;
                     setTimeout(() => {
-                        alert("It's a draw!")}, 500)
+                        alert(tieMessage)}, 500)
                 } else {
                     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
                     player.textContent = `Player ${currentPlayer} to move!`;
