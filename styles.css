@@ -125,7 +125,7 @@ h1{
 
 .winner-tile{
     animation: zoom 1s ease infinite;
-    background-color: var(--yellow); 
+    background-color: var(--danger); 
 
 }
 
