@@ -27,14 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     winnerBoard.classList.add('winner');
                     gameover = true;
-                } else if (Array.from(tiles).every(tile => tile.textContent !== '')) {
+
+                    setTimeout(() => {
+                        alert(winnerMessage)}, 500)                
+            } else if (Array.from(tiles).every(tile => tile.textContent !== '')) {
                     const tieMessage = "THE MATCH IS DRAW, TRY AGAIN!!!";
                     player.textContent = tieMessage;
                     winnerBoard.classList.add('tie');
                     gameover = true;
+                    setTimeout(() => {
+                        alert("It's a draw!")}, 50)
                 } else {
                     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
                     player.textContent = `Player ${currentPlayer} to move!`;
+
 
                 }
             }
@@ -58,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 tiles[c].textContent === player;
         });
     }
-
+        // Check for winning pattern
     function getWinningPattern(player) {
         const winPatterns = [
             [0, 1, 2], [3, 4, 5], [6, 7, 8],
